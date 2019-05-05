@@ -1,0 +1,125 @@
+@import url (https://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+@import url (https://fonts.googleapis.com/css?family=Clicker+Script|Elsie+Swash+Caps);
+/* @import allows your to import other css code right into that line^
+make sure to check how to use the fonts & add a fallback font of the first one doesnt work:
+  font-family: 'Elsie Swash Caps', cursive;
+
+*/
+
+
+
+/* This is a comment! */
+
+/* CSS Syntax:
+
+selector {
+  property: value;
+  property: value;
+}
+
+*/
+
+/* Type selector
+
+p { /* select all <p> */
+  font-size: 1em; /* =16px; /* 16px(exact amount regardless of browser), ?pt(12pt in word may not be same in safari),
+   100%(relative amount -- dependent on element itswelf & parent elements above it),
+   1em(1em = 16px -- em> px good in responsive design)*/
+
+   line-height: 1.5em
+   /*^ changes height in btwn each line in p. */
+}
+   figcaption {
+     /*font-weight: normal;
+     font-size: 0.75em;  /* compared to 1em, its smaller */
+     /*line-height: 1.5em;
+     font-family: Georgia, "New Times Roman", serif;*/
+     /*^ falls back on the diff fonts if it's not available. -- figcaption got smaller & has georigia font */
+
+     /* you can comment out all above & write it like this: */
+     font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
+     color: #777;
+     text-align: right;
+
+
+      /*you can directly write out color or use hexidecimal system:
+      #000000
+      #6 digits, 0-9 or A-F, first 2 = red, second 2 = green, last 2 = blue
+        or #FF0000 = RED, 00FF00 = GREEN , 0000FF
+        or use RGBA values (255,0,0,1) = red, 100% opaque (last value = opacity)
+      */
+}
+
+/* Class selector (applied to as many elements  as you like, + diff kind of elements)
+  unlike type selectors good for styling 1 style of elements, ^ class selectors, can be added anywhere & diff types */
+
+  .milk-text { /* select elemnts with class(attr)="milk-text" */
+  font: bold 2.6em 'Elsie Swash Caps', cursive;
+  color: white;
+  text-shadow: 0 2px 3px #000;
+  /* textshadow = horizontal offset = 0, vertical = 2px, blur radius = 3px, color = black */
+  /* you can add class attr to any of the files like this:
+  <h2 class="milk-text" add another-one, another-one >Featured Listings</h2> */
+
+}
+
+/* ID selector (apply to one unique element per page)
+you can apply classes on multiple elements, but not ID */
+/* and then nest it in a div like this :
+<!- logo -->
+<div id="logo">
+<h1>Exceptional</h1>
+<h2>Realty Group</h2>
+</div>
+<nav>
+  <a href="index.html">About</a> <a href="new-properties.html">New Properties</a> <a href="real-estate-listings.html">Listings</a> <a href="market-report.html">Market Report</a> <a href="contact.html">Contact</a> <a href="http://hud.gov" target="_blank">H.U.D.</a>
+</nav>
+</header>
+
+so that part is a box and  so css can target that unique id for box */
+#logo {
+  background-color: aqua;
+}
+ /*apply to one unique element per page */
+
+
+/*Descendent Selector
+- selects Descendents within another parent element */
+#logo h1 {
+  font-family: 'Clicker Script', cursive;
+}
+#logo h2 {
+  font-family: 'Elsie Swash Caps', cursive;
+}
+/* ^ browser first looks for id of logo, space will tell it to go in & look for it's Descendents.
+h1 which will only style h1's if its inside an element with id = logo */
+
+/*Psuedo Selector
+- selects element based on event state of other elements
+- ex if you wanna style all the links in the detail section-- */
+
+#details a:link,#details a:visited {
+  color: black;
+    text-decoration: none;
+  }
+
+  /*#details a:visited { COMPOUNDED THIS & ADDED THIS TO  ONE ABOVE.
+    color: black;
+      text-decoration: none;
+    }*/
+/*^ looking for section called details, with space it'll go in & find all links, to select
+in specific pseudo class state say a: and name of state.
+
+#details a: - part is a descendent selector
+:link  -- part is pseudo selector
+*/
+
+#details a:hover {
+  color: black;
+    text-decoration: underline;
+  }
+
+  #details a:active {
+    color: red;
+      text-decoration: none;
+    }
