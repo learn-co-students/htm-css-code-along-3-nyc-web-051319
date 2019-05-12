@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+figcaption {
+    font: normal 0.75em/1.5em Georgia, "New Times Roman", serif;
+    color: #777;
+    text-align: right;
+}
+
+.milk-text {
+    font: bold 2.6em 'Elise Swash Caps', cursive;
+    color: white;
+    text-shadow: 0 2px 3px #000;
+}
+
+#logo {
+    background-color: aqua;
+}
+
+#logo h1 {
+    color: white;
+}
+
+#details a:link, #details a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+#details a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#details a:active {
+    color: red;
+}
